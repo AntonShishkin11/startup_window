@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f0">
+  <title>Окно — лист ожидания</title>
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="shell bar">
+      <span class="brand"><span class="symbol" aria-hidden="true"></span>Окно</span>
+      <span class="top-caption">Локальный прототип</span>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow" id="hero-label">КАБИНЕТ САЛОНА</p>
+        <h1 id="hero-title">Свободные окна</h1>
+        <p id="hero-description">Добавьте время после отмены. «Окно» подберёт заявки по услуге и времени визита.</p>
+      </div>
+      <span class="hero-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    </section>
+    <div class="toolbar">
+      <nav class="switcher" aria-label="Режим">
+        <button type="button" data-view="admin" aria-pressed="true">Администратор</button>
+        <button type="button" data-view="client" aria-pressed="false">Клиент</button>
+      </nav>
+      <button type="button" class="quiet" id="demo">Загрузить демоданные</button>
+    </div>
+    <p id="notice" class="notice" role="status" hidden></p>
+    <div id="admin" class="workspace">
+      <section class="panel">
+        <h2>Добавить окно</h2>
+        <p class="subtitle">Укажите услугу, которая помещается в освободившееся время.</p>
+        <form id="slot-form">
+          <label>Услуга<select name="service" required></select></label>
+          <label>Дата<input name="day" type="date" required></label>
+          <div class="form-row">
+            <label>Начало<input name="starts" type="time" required></label>
+            <label>Окончание<input name="ends" type="time" required></label>
+          </div>
+          <button type="submit" class="primary">Добавить и подобрать клиентов</button>
+        </form>
+      </section>
+      <section class="panel">
+        <h2>Окна и отклики</h2>
+        <p class="subtitle" id="requests-summary"></p>
+        <div id="slots"></div>
+      </section>
+    </div>
+    <div id="client" class="workspace" hidden>
+      <section class="panel">
+        <h2>Моя заявка</h2>
+        <p class="subtitle">Выберите демопрофиль и сохраните удобный интервал.</p>
+        <label>Профиль<select id="profile"></select></label>
+        <form id="request-form">
+          <label>Услуга<select name="service" required></select></label>
+          <label>Удобная дата<input name="day" type="date" required></label>
+          <div class="form-row">
+            <label>Смогу с<input name="starts" type="time" required></label>
+            <label>Смогу до<input name="ends" type="time" required></label>
+          </div>
+          <button type="submit" class="primary">Сохранить заявку</button>
+        </form>
+      </section>
+      <section class="panel">
+        <h2>Предложения</h2>
+        <p class="subtitle">Здесь появятся окна, которые подходят вашей заявке.</p>
+        <div id="inbox"></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

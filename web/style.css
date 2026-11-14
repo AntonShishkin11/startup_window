@@ -1,0 +1,67 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #182d24;
+  background: #f8f7f0;
+  --muted: #4c6257;
+  --line: #d7e0d4;
+  --green: #20604a;
+  --dark: #173a30;
+  --lime: #dff298;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+[hidden] { display: none !important; }
+.shell { width: min(1120px, calc(100% - 64px)); margin-inline: auto; }
+.top { border-bottom: 1px solid var(--line); }
+.bar { min-height: 67px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 10px; font-size: 24px; font-weight: 760; }
+.symbol { width: 21px; height: 21px; border: 2px solid var(--green); border-radius: 4px; background: linear-gradient(90deg, transparent 45%, var(--green) 45% 55%, transparent 55%), linear-gradient(transparent 45%, var(--green) 45% 55%, transparent 55%); }
+.top-caption, .subtitle { color: var(--muted); font-size: 15px; }
+.hero { margin: 29px 0 23px; padding: 30px 34px; border-radius: 16px; background: var(--dark); color: white; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.eyebrow { color: var(--lime); font-size: 12px; font-weight: 750; letter-spacing: .14em; margin: 0 0 8px; }
+h1 { font-size: clamp(32px, 6vw, 54px); letter-spacing: -.045em; margin: 0 0 7px; line-height: 1.08; }
+.hero p:last-child { color: #e1ebe3; margin: 0; line-height: 1.5; }
+.hero-mark { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; flex: 0 0 84px; height: 84px; margin-right: 9px; }
+.hero-mark i { border: 1px solid #88a994; border-radius: 6px; }
+.hero-mark i:nth-child(2) { background: var(--lime); border-color: var(--lime); }
+.toolbar { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 19px; }
+.switcher { display: flex; border-radius: 10px; padding: 4px; background: #e8eee3; }
+button, input, select { font: inherit; }
+button { cursor: pointer; border: 0; border-radius: 8px; padding: 9px 14px; font-weight: 650; color: inherit; }
+button:disabled { opacity: .6; cursor: wait; }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+.switcher button { background: transparent; color: var(--muted); }
+.switcher button[aria-pressed=true] { background: var(--dark); color: white; }
+.quiet { background: transparent; border: 1px solid var(--line); }
+.quiet:hover { background: #e8eee3; }
+.workspace { display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 19px; align-items: start; margin-bottom: 34px; }
+.panel { border: 1px solid var(--line); padding: 22px; background: #fffefa; border-radius: 13px; min-width: 0; }
+h2 { margin: 0; font-size: 23px; letter-spacing: -.025em; }
+.subtitle { margin: 7px 0 17px; line-height: 1.45; }
+form, .form-row { display: grid; gap: 12px; }
+.form-row { grid-template-columns: 1fr 1fr; }
+label { display: grid; color: var(--muted); gap: 5px; font-size: 14px; font-weight: 630; min-width: 0; }
+#profile { margin-bottom: 12px; }
+input, select { border-radius: 8px; border: 1px solid #cdd8cc; background: #fff; color: #182d24; min-height: 40px; padding: 7px 9px; width: 100%; }
+.primary { background: var(--green); color: white; }
+.primary:hover { background: var(--dark); }
+form .primary { margin-top: 3px; }
+.notice { border: 1px solid var(--line); border-radius: 8px; background: #e8f1d8; padding: 10px 14px; margin: 0 0 16px; }
+.notice.error { background: #fce8df; color: #722b19; }
+.empty { color: var(--muted); border: 1px dashed #cad7c7; border-radius: 9px; padding: 14px; margin: 0; }
+.item { border: 1px solid var(--line); border-radius: 10px; padding: 13px; margin-top: 10px; }
+.item:first-child { margin-top: 0; }
+.item-head, .offer-line { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+.item strong { font-size: 17px; }
+.item p { margin: 6px 0; color: var(--muted); font-size: 14px; }
+.badge { border-radius: 6px; padding: 4px 8px; font-size: 13px; font-weight: 650; background: #eef2e8; }
+.badge.done { background: #e5f2ce; }
+.offer-line { border-top: 1px solid var(--line); padding: 7px 0 2px; margin-top: 7px; font-size: 14px; }
+.offer-line button, .item button { font-size: 14px; }
+@media (max-width: 760px) {
+  .shell { width: min(100% - 28px, 1120px); }
+  .workspace { grid-template-columns: 1fr; }
+  .hero { padding: 23px; }
+  .hero-mark { display: none; }
+}
